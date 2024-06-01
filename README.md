@@ -22,7 +22,7 @@ cd ruta/al/directorio/del/proyecto
 
 3. **Inicia los servicios Docker:** Ejecuta el siguiente comando para construir y levantar los contenedores Docker:
 
-docker-compose up --build
+docker compose up --build
 
 
 4. **Accede a la aplicación:** Una vez que todos los contenedores estén en funcionamiento, puedes acceder a la aplicación frontend en tu navegador web. Abre tu navegador y visita la siguiente URL:
@@ -32,7 +32,7 @@ http://localhost:5173
 
 5. **Detener los servicios:** Cuando hayas terminado de usar la aplicación, puedes detener los contenedores Docker ejecutando el siguiente comando en la terminal:
 
-docker-compose down
+docker compose down
 
 
 ¡Y eso es todo! Ahora deberías poder ejecutar y usar la aplicación sin necesidad de conocimientos técnicos profundos en programación o sistemas.
@@ -61,7 +61,7 @@ cd path/to/project/directory
 
 3. **Start the Docker services:** Run the following command to build and start the Docker containers:
 
-docker-compose up --build
+docker compose up --build
 
 
 4. **Access the application:** Once all the containers are running, you can access the frontend application in your web browser. Open your browser and visit the following URL:
@@ -71,7 +71,7 @@ http://localhost:5173
 
 5. **Stop the services:** When you're done using the application, you can stop the Docker containers by running the following command in the terminal:
 
-docker-compose down
+docker compose down
 
 
 And that's it! You should now be able to run and use the application without deep technical knowledge in programming or systems.
