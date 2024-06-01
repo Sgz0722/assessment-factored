@@ -1,0 +1,20 @@
+# Establece la imagen base
+FROM python:3.9-slim
+
+# Establece el directorio de trabajo en el contenedor
+WORKDIR /app
+
+# Copia el archivo requirements.txt
+COPY assesment\ factored\ back/requirements.txt .
+
+# Instala las dependencias del proyecto
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copia el resto de los archivos de la aplicación
+COPY assesment\ factored\ back/ .
+
+# Expone el puerto en el que la aplicación estará corriendo
+EXPOSE 5000
+
+# Comando para correr la aplicación
+CMD ["python", "app.py"]

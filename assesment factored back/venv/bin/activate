@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/Rextery/Trabajo/technical assessment/assesment factored back/venv"
+VIRTUAL_ENV="/home/Rextery/Trabajo/technical assessment/factored/assesment factored back/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
