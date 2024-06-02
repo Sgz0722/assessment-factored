@@ -1,3 +1,5 @@
+use apiDB;
+
 INSERT INTO user (username, password) VALUES
 ('user1', '$2a$12$EN853yhvOp3b8hVT33Vd6eBpD1Ku4cm.AyKXWtbnEDdsLMHVwjo92'),
 ('user2', '$2a$12$i7dYn2mIpAQL9c.AUZ/.G.tP/IMWvEoCfBuikc9s8oTaM20T6Hg/e'),

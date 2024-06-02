@@ -5,16 +5,16 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copia el archivo requirements.txt
-COPY assesment\ factored\ back/requirements.txt .
+COPY assesment_factored_back/requirements.txt .
 
 # Instala las dependencias del proyecto
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copia el resto de los archivos de la aplicación
-COPY assesment\ factored\ back/ .
+COPY assesment_factored_back/ .
 
 # Expone el puerto en el que la aplicación estará corriendo
 EXPOSE 5000
 
 # Comando para correr la aplicación
-CMD ["python", "app.py"]
+CMD ["sh", "-c", "./wait-for-it.sh db:3306 -- python app.py"]

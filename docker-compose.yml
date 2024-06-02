@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 services:
   frontend:
@@ -9,6 +9,8 @@ services:
       - "5173:5173"
     depends_on:
       - backend
+    environment:
+      - VITE_BACKEND_URL=http://localhost:5000
     networks:
       - app-network
 
@@ -21,7 +23,7 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=mysql+pymysql://root:root@localhost:3306/apiDB
+      - DATABASE_URL=mysql+pymysql://root:root@db:3306/apiDB
     networks:
       - app-network
 
@@ -43,11 +45,12 @@ services:
       - db
       - backend
     volumes:
+      - ./wait-for-it.sh:/wait-for-it.sh  
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: apiDB
-    entrypoint: [ "sh", "-c", "mysql -h db -u root -proot apiDB < /docker-entrypoint-initdb.d/init.sql" ]
+    entrypoint: [ "sh", "-c", "/wait-for-it.sh backend:5000 -- /wait-for-it.sh db:3306 -- mysql -h db -u root -proot apiDB < /docker-entrypoint-initdb.d/init.sql" ]
     networks:
       - app-network
 
